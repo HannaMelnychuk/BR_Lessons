@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "a72d622e-371d-45ed-83b1-1377b701a7a6",
+		"name": "Lesson 18 Hanna Melnychuk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41957614"
+	},
+	"item": [
+		{
+			"name": "User creation with valid data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseData = pm.response.json();",
+							"const extractedId = responseData.id;",
+							"pm.collectionVariables.set(\"userId\", extractedId);",
+							"",
+							"pm.test(\"User name is correct\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var expectedName = pm.collectionVariables.get('userName');",
+							"    pm.expect(jsonData.name).to.eql(expectedName);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const requestData = JSON.parse(pm.request.body.raw);\r",
+							"const extractedName = requestData.name;\r",
+							"pm.collectionVariables.set(\"userName\", extractedName);\r",
+							"\r",
+							"const extractedGender = requestData.gender;\r",
+							"pm.collectionVariables.set(\"userGender\", extractedGender);\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Elizabet\",\r\n\"age\":30,\r\n\"gender\":\"female\",\r\n\"city\": \"London\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User creation with invalid age",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validation error: age is invalid\", function () {\r",
+							"  pm.expect(pm.response.text()).to.include(\"Validation error: age is invalid\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"{{userName}}\",\r\n\"age\": 150,\r\n\"gender\":\"female\",\r\n\"city\": \"London\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find user by existing ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User name is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var expectedName = pm.collectionVariables.get('userName');\r",
+							"    pm.expect(jsonData.name).to.eql(expectedName);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users?id={{userId}}",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find non-existing user ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"No users found\", function () {\r",
+							"  pm.expect(pm.response.text()).to.include(\"No users found\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users?id=0000",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating user information with valid data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User name is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var expectedName = pm.collectionVariables.get('userName');\r",
+							"    pm.expect(jsonData.name).to.eql(expectedName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"City is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var expectedCity = pm.collectionVariables.get('userCity');\r",
+							"    pm.expect(jsonData.city).to.eql(expectedCity);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const requestData = JSON.parse(pm.request.body.raw);\r",
+							"const extractedCity = requestData.city;\r",
+							"pm.collectionVariables.set(\"userCity\", extractedCity);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": \"{{userId}}\",\r\n\"name\": \"{{userName}}\",\r\n\"age\":30,\r\n\"gender\":\"female\",\r\n\"city\": \"Capetown\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating user information with empty required field.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400 Bad Request \", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User name is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var expectedName = pm.collectionVariables.get('userName');\r",
+							"    pm.expect(jsonData.name).to.eql(expectedName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Gender is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var expectedGender = pm.collectionVariables.get('userGender');\r",
+							"    pm.expect(jsonData.gender).to.eql(expectedGender);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": \"{{userId}}\",\r\n\"age\": 30,\r\n\"name\": \"Elizabet\",\r\n\"gender\":\"\",\r\n\"city\": \"Capetown\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting existing user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User is deleted\", function () {\r",
+							"  pm.expect(pm.response.text()).to.include(\"User is deleted\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users?id={{userId}}",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting non exisiting user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User is not found\", function () {\r",
+							"  pm.expect(pm.response.text()).to.include(\"No user found\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users?id=23",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "23"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6"
+		},
+		{
+			"key": "userId",
+			"value": "23a0b920-acd3-4703-ac6b-153e400ad890"
+		},
+		{
+			"key": "userName",
+			"value": "Elizabet"
+		},
+		{
+			"key": "userCity",
+			"value": "Capetown"
+		},
+		{
+			"key": "userGender",
+			"value": "female"
+		}
+	]
+}
