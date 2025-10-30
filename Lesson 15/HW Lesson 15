@@ -1,0 +1,171 @@
+Beet Seed
+
+                     ID BR_1
+Summary: The search field placeholder text doesn’t update when changing the interface language Eng/ Ukr.
+Environment: 
+OS: Windows 11
+Browser: Chrome v.141.0.7390.77 
+            Preconditions:
+Open oxford-med.com.ua website 
+Steps to reproduce:
+Switch interface language to Eng/Ukr
+Click on the search sign
+Check the placeholder text
+Actual result:
+            The search field placeholder text is displayed in the Russian language.
+            Expected result:
+            The search field placeholder text is displayed in the English/Ukrainian language.
+            Attachments: 
+
+Severity: Low
+Priority: High
+
+ID BR_2
+                Summary: The search field overlaps the header when it’s open.
+Environment: 
+OS: Windows 11
+Browser: Chrome v.141.0.7390.77 
+Preconditions:
+Open oxford-med.com.ua website 
+Steps to reproduce:
+Click on the search sign
+            Actual result:
+The search field overlaps the header, which looks visually inconsistent.
+            Expected result:
+The search field doesn’t overlap the header. The header elements remain visible and usable. 
+Attachments: 
+Severity: Low
+Priority: Low
+
+ID BR_3
+                Summary: The “Play” icons in the video reviews overlap during loading. 
+Environment: 
+ OS: Windows 11
+ Browser: Chrome v.141.0.7390.77
+            Preconditions:
+Open oxford-med.com.ua website 
+            Steps to reproduce:
+Click on the [відео відгуки] button on the main page
+Click on the ‘Завантажити ще’ button
+Observe the play icons
+            Actual result:
+Multiple “Play” icons appear overlapping on top of each other, when the video reviews section loads.
+Expected result:
+ Only one “Play” icon should be displayed per video, aligned correctly during loading.
+Attachments: Video
+Severity: Low
+Priority: Low
+           
+           ID BR_4
+                Summary: The button "[Детальніше]" in the feature image changes to Russian language when the interface language is switched to English.
+Environment: 
+OS: Windows 11
+Browser: Chrome v.141.0.7390.77 
+            Preconditions:
+Open oxford-med.com.ua website 
+Steps to reproduce: 
+Switch the interface language to English
+Check the [Детальніше] button on the feature image.
+Actual result:
+            The “[Детальніше]” button text changes to Russian instead of English.
+            Expected result:
+ The “[Детальніше]” button text changes according to the selected interface language.
+            Attachments: 
+
+
+Severity: Low
+Priority: Low
+
+            
+           ID BR_5
+                Summary: The language drop-down list overlaps the navigation elements.
+                Environment: 
+OS: Windows 11
+Browser: Chrome v.141.0.7390.77 
+Preconditions:
+Open oxford-med.com.ua website 
+Steps to reproduce: 
+Click the language selection icon in the header.
+Observe the language drop-down list.
+Actual result:
+          The language drop-down list overlaps the navigation elements.
+Expected result:
+The language drop-down list doesn’t overlap the navigation elements. The navigation elements remain visible.
+Attachments:  Video
+Severity: Low
+Priority: Low
+ 
+
+Beet Sprout
+
+Browser Mozilla Firefox (Version 144.0)
+Browser Microsoft Edge (Version 141.0.3537.71)
+Browser Arc (Version 1.76.0 (228)) (*Не популярний, хотілось би протестувати в Safari,але поки нема такої можливості)
+Sar - Same actual result, like in Google Chrome
+
+
+Mozilla Firefox
+Microsoft Edge
+Arc
+BR_1
+Sar
+Sar
+Sar
+BR_2
+Sar
+Sar
+Sar
+BR_3
+Sar
+Expected result
+Sar
+BR_4
+Sar
+Sar
+Sar
+BR_5
+Sar
+Sar
+Sar
+
+
+
+
+Mighty Beet
+
+
+
+Шрифт
+Розмір шрифту
+Колір шрифту
+Колір бекграунду
+Номер телефону у хедері
+
+
+HelveticaNeue-Bold, sans-serif;
+16px
+#ffffff
+#24a7ed
+Ім’я асистента при виклику чата допомоги
+
+
+"Open Sans", sans-serif;
+16px
+rgb(255, 255, 255)
+rgb(29, 183, 237)
+Кнопка “інші міста” у футері сайту
+
+
+HelveticaNeue, sans-serif;
+14px
+#24a7ed
+#ebebeb
+Placeholder “ім’я” у формі “ЗАПИСАТИСЯ НА ПРИЙОМ”
+
+
+HelveticaNeue, sans-serif;
+14px
+#535353
+rgb(255, 255, 255)
+
+
