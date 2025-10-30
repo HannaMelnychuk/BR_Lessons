@@ -1,0 +1,116 @@
+ID	BR-001
+Summary: Verify login with a valid email and password
+Priority:	High
+Preconditions: User is already registered
+Steps	: 
+1. Open the Sephora website. 
+2. Click on the 'Sign In'
+3. Enter a valid email and password 
+4. Click on the "Sign In" button.
+Expected result: The user is redirected to the main page; the User's name is displayed in the header
+
+ID	BR-002
+Summary: Verify that the user is able to search by category
+Priority	High
+Preconditions	
+Steps: 
+1. Open the Sephora website. 
+2. Enter a "Skincare" category name in the search field
+3. Press the "Enter" button.
+Expected result: The user is redirected to the "Skincare" category page
+	
+
+ID	BR-003
+Summary:	Verify that the user is able to add a  product to the basket
+Priority: High
+Preconditions: User is logged in
+Steps:
+1. Open the Sephora website. 
+2. Open any product page
+3. Click on the "Add to basket" button
+Expected result: The pop-up with the added product in the Basket is displayed. The Basket icon displays amount of added items.
+	
+
+ID	BR-004
+Summary: Verify successful checkout. 
+Priority:	High
+Preconditions:	User is logged in
+Steps:
+1. Open the Sephora.com website
+2. Add at least one available product to the basket
+3. Open the basket
+4. Click on the "Checkout" button.
+5. Fill in the delivery information and payment details with valid information
+6. Click on the "Place order" button.
+Expected result: Order is successfully placed; confirmation message appears.
+
+ID	BR-005
+Summary:	Verify that the user is able to search by product name
+Priority:	High
+Preconditions:
+Steps:
+1. Open the Sephora website. 
+2. Enter a "Clinique" product name in the search field
+3. Press the "Enter" button
+Expected result: Correct product appears in search results
+	
+
+ID	BR-006
+Summary:	The user isn't able to check out an 'Out of stock' product.
+Priority:	Medium
+Preconditions	
+Steps:
+1. Open the Sephora.com website
+2. Open 'Out of stock' product page
+3. Click on the "Add to basket" button
+4. Open the basket
+5. Click on the "Checkout" button.
+Expected result:	The error message “Sorry, your basket contains item(s) that are now out of stock. The item(s) will be removed when you checkout.”. The item is removed from the order.
+	
+
+ID	BR-007
+Summary:	Verify that the user isn't able to login with an invalid password
+Priority:	Medium
+Preconditions:	 The user is already registered.
+Steps:	
+1. Open the Sephora.com website
+2. Fill in the email field with valid information
+3. Fill in the password field with invalid information.
+4. Click on the "Sign In " button
+Expected result:	The error message is displayed: "There is an error with your email and/or password. Please try again or click "Forgot Password?".
+	
+
+ID	BR-008
+Summary:	Verify that the user isn't able to search for an invalid product name
+Priority:	Medium
+Preconditions:	
+Steps: 
+1. Open the Sephora website. 
+2. Enter an invalid  product name in the search field 
+3. Press the "Enter" button.
+Expected result:	The message is displayed: "Sorry, we couldn’t find a match for 'invalid product name'
+Try our suggestions below or update your search term and try again."
+	
+
+ID	BR-009
+Summary:	Verify that the user isn't able to search with symbols
+Priority:	Medium
+Preconditions:	
+Steps:
+1. Open the Sephora website. 
+2. Enter a symbols in the search field 
+3. Press the "Enter" button
+Expected result: The message is displayed "Sorry, we couldn’t find a match for 'symbols'
+Try our suggestions below or update your search term and try again."
+	
+
+ID	BR-010
+Summary:	Verify that the user isn't able to create an account with an invalid email format
+Priority: Medium
+Preconditions:	
+Steps:
+1. Open the Sephora.com website
+2. Click on the "Create Account" button
+3. Fill in the email field with an invalid email format
+4. Click on the "Continue" button
+Expected result: The error message: "Please enter an e-mail address in the format username@domain.com." is displayed. The email field is highlighted in red.
