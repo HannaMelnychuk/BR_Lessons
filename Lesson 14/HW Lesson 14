@@ -1,0 +1,80 @@
+Beet Seed
+
+JiraProject - Bug Reports
+
+Lesson 14 - Основи WEB - Hanna Melnychuk 
+Check-list 
+Adding to the cart:	
+Check adding a product to the cart 
+	
+Product Information:
+Check the product information is displayed correctly.
+	
+Price:
+Check the product price is displayed
+Check the discount is applied
+Check the sum 
+Check the total amount 
+	
+Delivery:	
+Check the delivery fee progress bar.
+	
+Number of product:
+Check changing quantity of the product.
+Check removing a product from the cart.
+	
+Other	
+Check adding a product to the list of favorites.
+Check  the cart icon updates correctly.
+Check the offered products carousel. 
+Check the cart notifications are shown.
+	
+Checkout	
+Check the proceed to checkout.
+
+Test Cases
+
+ID	BR-002
+Summary:	Check adding a product to the cart from the product card page.
+Priority:	High
+Preconditions: - Open the peslike.ua 
+Steps	
+1. Open any in-stock product card page.
+2. Click on the [В кошик] button.
+3. Click on the cart icon.
+4. Check the product in the cart."
+Expected result:	The product is displayed in the cart.
+	
+
+ID	BR-003
+Summary:	Check that changing quantity to “0” removes product from the cart.
+Priority	Medium
+Preconditions	
+- Open the peslike.ua
+- One product is added to the cart."
+Steps:
+1. Open the cart page.
+2. Change the number of product to "0"."
+Expected result	The product is removed from the cart. The message 'Корзина порожня' is displayed.
+	
+ID	BR-004
+Summary:	Check the free delivery to the department with a total amount of 899грн
+Priority:	High
+Preconditions:
+- Open the peslike.ua 
+- The products with total amount 899грн have been added to the cart."
+Steps:
+1. Open the cart page.
+2. Click on the [Оформити замовлення] button.
+3. Fill in all requierd fields with valid information.
+4. Choose the delivery department.
+5. Check the delivery fee in the total amount."
+Expected result: The total delivery fee is 0.00 грн.
+
+Beed Sprout
+
+  https://beetroot.academy   utf-8
+   https://microseniors76.com/ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   https://www.tennis-warehouse.com/  <meta charset="macintosh">
+   https://www.fidelity.com/ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
