@@ -1,0 +1,37 @@
+Check-list for silpo.ua
+
+Header	
+	Redirecting to the main page by clicking on the logo
+	Open/close the burger menu
+	Verify the links in the burger menu redirect to the correct page
+	Switch between product categories at "Всі товари"
+	Verify clicking on a product category redirects to the correct category page
+	Verify the cart icon is displayed
+	Verify the cart icon displays the correct items amount 
+	Verify the cart icon displays the correct total price
+	Verify the login 
+	
+Search	
+  Search with product name
+	Search with category name
+	
+Location	
+  Choose the delivery address by searching 
+	Choose the delivery address on the map
+	Choose the city for pick-up from the menu
+	Choose the store for pick-up from the menu
+	Choose the store for pick-up on the map
+	
+Main content	
+  Verify the horizontal scroll list has 20 products 
+	Verify clicking on a product card redirects to the correct product page
+	Verify adding a product from the main page adds it to the cart
+	Verify that banners with discounts are displayed 
+	Verify that banners with discounts are sliding
+	Verify that clicking the banner with a discount redirects to the correct page
+	
+Footer	
+  Verify that clicking on social media links redirects to the correct pages
+	Verify downloading the mobile app by link
+	Check the footer links redirect to the correct pages
+	Verify scroll to top button redirect to the top of the page

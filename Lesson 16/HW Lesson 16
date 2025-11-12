@@ -1,0 +1,155 @@
+Beet seed
+
+ID BR_01
+Summary: The Facebook link below the main content incorrectly redirects to Instagram before opening Facebook.
+Environment: 
+OS: iOS 18.6.2
+Browser: Safari
+Device model: iPhone 14pro
+Steps to reproduce:
+Open http://www.dpcozt.com.ua/ on a mobile device
+Click on the Facebook icon
+Actual result:  User is redirected to the Instagram app first, and only then redirected to the Facebook website.
+Expected result: User is redirected directly  to the Facebook app or website 
+Attachments: BR_01.mp4  
+Severity: Low
+Priority: Medium
+
+
+  ID BR_02
+Summary: The text on the banner at the bottom of the main page is hard to read.
+Environment: 
+OS: iOS 18.6.2
+Browser: Safari
+Device model: iPhone 14pro
+Steps to reproduce:
+Open http://www.dpcozt.com.ua/ on a mobile device
+Open the main page
+Go to the bottom
+Observe the banner with the “Контакти” link
+Actual result:
+ The banner text is hard to read due to low contrast with the background.
+Expected result:
+   The banner text is clearly visible and easy to read.
+Attachments:
+ BR_02.jpg
+
+Severity: Low
+Priority: Low
+
+
+
+
+
+
+
+ ID BR_03
+Summary: The feature image on the main page is of low quality and appears cropped in portrait mode.
+Environment: 
+OS: iOS 18.6.2
+Browser: Safari
+Device model: iPhone 14pro
+Steps to reproduce:
+Open http://www.dpcozt.com.ua/ on a mobile device in portrait mode
+Observe the feature image on the main page
+Actual result: The feature image is blurry and of poor quality. The meaning of the feature image is unclear.
+Expected result: The feature image is clear, high-quality and has the correct size.
+Attachments:
+BR_03.jpg
+
+Severity: Low
+Priority: Low
+
+
+ ID BR_04
+Summary: The “Go to top” button scrolls the page with braking.
+Environment: 
+OS: iOS 18.6.2
+Browser: Safari
+Device model: iPhone 14pro
+Steps to reproduce:
+Open http://www.dpcozt.com.ua/ on a mobile device
+Go to the bottom of the page
+Click on the [Go to the top] button
+Actual result: The page scrolls with braking.
+Expected result: The page scrolls smoothly to the top.
+Attachments: BR_04.mp4
+Severity: Low
+Priority: Low
+
+
+ ID BR_05
+Summary: 
+The element with the city on the main page looks misplaced.
+Environment: 
+OS: iOS 18.6.2
+Browser: Safari
+Device model: iPhone 14pro
+Steps to reproduce:
+Open http://www.dpcozt.com.ua/ on a mobile device
+Scroll to the bottom of the main page.
+Observe the section containing the city element.
+Actual result: The element with the city visually resembles a footer, which may cause users to stop scrolling and miss content below.
+Expected result: The design should clearly indicate that the page continues below this block, ensuring users don’t overlook additional information.
+Attachments:
+ BR_05(1).jpg BR_05(2).jpg
+
+Severity: Low
+Priority: Medium
+
+
+
+
+
+Beet sprout
+  
+BR_06
+Summary: The feature image on the ‘Готель для тварин’ page is cropped in portrait mode.
+Environment: 
+OS: Android 15.0
+Browser: Google Chrome
+Device model: Android Emulator (Medium Phone API 35)
+Steps to reproduce:
+Open zpolis.com.ua on a mobile device in portrait mode
+Open the ‘Готель для тварин’ page
+Observe the feature image
+Actual result: The feature image is cropped, and part of the image is not visible.
+Expected result: The feature image is displayed in full, with proper proportions.
+Attachments:
+BR_06.png
+Severity: Low
+Priority: Low
+
+
+BR_07
+Summary: The image ‘Вакансия тест’ is broken on the Вакансіі page.
+Environment: 
+OS: Android 15.0
+Browser: Google Chrome
+Device model: Android Emulator (Medium Phone API 35)
+Steps to reproduce:
+Open zpolis.com.ua on a mobile device
+Go to the ‘Вакансіі’ page
+Observe the image
+Actual result: The image is broken.
+Expected result: The image is displayed.
+Attachments: BR_07.png
+Severity: Low
+Priority: Medium
+
+
+BR_08
+Summary: The [Детальніше] button on the ‘Вакансії’ page doesn’t redirect the user to the detailed information page.
+Environment: 
+OS: Android 15.0
+Browser: Google Chrome
+Device model: Android Emulator (Medium Phone API 35)
+Steps to reproduce:
+Open zpolis.com.ua on a mobile device
+Go to the ‘Вакансіі’ page
+Click on the [Детальніше] button
+Actual result: The user isn’t redirected to the page page with detailed information after clicking on the [Детальніше] button. The page only refreshes.
+Expected result: The user is redirected to the page with detailed information after clicking on the [Детальніше] button. 
+Attachments:BR_08.mp4
+Severity: Low
+Priority:Medium

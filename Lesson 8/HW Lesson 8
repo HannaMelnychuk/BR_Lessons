@@ -1,0 +1,15 @@
+Beet Seed
+
+JiraProject - Bug Reports
+
+Beet Sprout
+
+Severity-Low/Priority-High
+
+The color of the Logo is different from the required one on the main page.
+The social media link in the footer is redirected to the wrong page.
+
+Severity-High/Priority-Low
+
+The login form crashed when the password had more than 500 characters. 
+The application crashed when the interface language changed to Esperanto.

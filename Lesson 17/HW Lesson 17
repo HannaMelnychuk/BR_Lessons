@@ -1,0 +1,111 @@
+Beet Sprout
+
+
+Test Cases for https://automoto.ua/uk/car 
+
+ID: BR_1
+Summary: Verify the user is able to register with valid information.
+Priority: High
+Preconditions: The User isn’t registered.
+Steps:
+Open the https://automoto.ua/uk/car website
+Click on the sign-in/log-in icon
+Enter a valid phone number
+ER: The user is registered and redirected to the "Мої оголошення" page.
+
+
+ID: BR_2
+Summary: Verify searching by brand in the search form.
+Priority: High
+Steps:
+Open the https://automoto.ua/uk/car website
+Go to the search on the main page 
+All fields leave without change
+Choose the brand [e.x. Tesla]
+Click on the [Пошук] button
+ER: The user is redirected to the search result page. The search result shows only Tesla brand cars.
+
+ID: BR_3
+Summary: Verify searching by category menu.
+Priority: High
+Steps:
+Open the https://automoto.ua/uk/car website
+Click on the category [e.x. Каталоги Європи -> Авто з Литви]
+ER: The user is redirected to the search result page. The search result shows only cars from Lithuania.
+
+ID: BR_4
+Summary: Verify adding the advertisement to the list of favourites.
+Priority: High
+Preconditions: The user is logged in
+Steps:
+Open the https://automoto.ua/uk/car website
+Go to any advertisement page
+Click on the Add to Favourites icon
+ER: The advertisement is added to the list of favourites.
+
+
+ID: BR_5
+Summary: Verify that the user cannot submit the contact form with an invalid email format.
+Priority: High
+Preconditions:
+Steps:
+Open the https://automoto.ua/uk/car website
+Go to the contact page
+Fill in all required fields with valid data
+Fill in the email field with an invalid email format [e.x. testgmail.com]
+ER: The message “Перевірте правильність вводу email” is displyed, the user can’t send the form.
+
+
+LIST USERS
+
+1. Verify opening the existing page with list of users.
+2. Verify opening the non-existent page with list of users.
+Bug. 
+E.R. Error 404 not found
+
+
+SINGLE USER
+1. Verify getting information about the existing user. 
+2. Verify getting information about a non-existent user.
+
+
+CREATE
+1. Verify the creation of a new user with valid data.
+2. Verify the system doesn’t allow the creation of a new user with an empty ‘Name’.
+Bug. 
+E.R. Error 400 Bad Request
+
+UPDATE (PUT)
+
+1. Verify the user is able to update job information with valid data.
+2. Verify the user isn’t able to update the name with invalid data.
+
+
+UPDATE (PATCH)
+
+1. Verify the user is able to update only the name with valid data. 
+2. Verify the user isn’t able to update the name with invalid information
+Bug. 
+E.R. Error 400 (Bad request)
+ 
+
+DELETE
+1. Verify that the user is able to delete an existing user.
+2. Verify that the user isn’t able to delete non-existing user.
+Bug. 
+E.R. Error 404 Not Found
+
+
+REGISTER - SUCCESSFUL
+1. Verify that the user is able to register with valid data
+BUG
+E.R. The user is successfully registered. Code responce 200(OK)
+
+2. Verify that the user isn’t able to register with invalid Email format.
+
+LOGIN - SUCCESSFUL
+1. Verify that the not registered user isn’t able to login.
+2. Verify that the user is able to login with valid data.
+
+
+
